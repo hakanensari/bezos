@@ -17,9 +17,9 @@ npm install bezos
 ## Usage
 
 ```coffee
-bezos = require 'bezos'
+Bezos = require 'bezos'
 
-# Build a request URL and then:
+bezos = new Bezos secret
 bezos.sign url
 
 [status]: https://secure.travis-ci.org/hakanensari/bezos.png

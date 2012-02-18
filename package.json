@@ -1,0 +1,41 @@
+{
+   "name": "bezos",
+   "description": "A utility that timestamps and signs requests to various Amazon APIs",
+   "version": "0.0.1",
+   "homepage": "http://github.com/hakanensari/bezos",
+   "author": "Hakan Ensari <hakan.ensari@papercavalier.com>",
+   "main": "./lib/bezos",
+   "directories": {
+     "lib": "./lib/bezos"
+   },
+   "bugs": {
+     "url": "http://github.com/hakanensari/bezos/issues"
+   },
+   "repository": {
+     "type": "git",
+     "url": "git://github.com/hakanensari/bezos.git"
+   },
+   "dependencies": {
+   },
+   "devDependencies": {
+     "coffee-script": "*",
+     "mocha": "*",
+     "should": "*"
+   },
+   "scripts": {
+     "test": "node_modules/mocha/bin/mocha test/*.coffee"
+   },
+   "engines": {
+     "node": ">= 0.4.0"
+   },
+   "licenses": [
+     {
+       "type": "MIT",
+       "url": "https://raw.github.com/hakanensari/bezos/master/LICENSE"
+     }
+   ],
+   "tags": [
+     "Amazon",
+     "API"
+   ]
+}
