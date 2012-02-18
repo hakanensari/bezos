@@ -5,13 +5,8 @@ querystring = require 'querystring'
 class Bezos
   constructor: (@_secret) ->
 
-  # Signs a given URL.
-  sign: (url, method = 'GET') ->
-    params = if url.query.constructor == Object
-               url.query
-             else
-               querystring.parse url.query
-
+  # Returns a signed path for given request.
+  sign: (host, pathname, params, method = 'GET') ->
     params['Timestamp'] = new Date().toISOString()
 
     query = (
@@ -22,13 +17,12 @@ class Bezos
     hmac = crypto.createHmac 'sha256', @_secret
     hmac.update [
       method,
-      url.hostname,
-      url.pathname,
+      host,
+      pathname,
       query
     ].join("\n")
     signature = hmac.digest 'base64'
-    url.query = "#{query}&Signature=#{querystring.escape signature}"
 
-    url
+    "#{pathname}?#{query}&Signature=#{querystring.escape signature}"
 
 module.exports = Bezos
