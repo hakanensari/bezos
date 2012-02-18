@@ -1,7 +1,7 @@
 {
    "name": "bezos",
-   "description": "A utility that timestamps and signs requests to various Amazon APIs",
-   "version": "0.0.1",
+   "description": "Bezos signs requests to various Amazon APIs",
+   "version": "0.0.2",
    "homepage": "https://github.com/hakanensari/bezos",
    "author": "Hakan Ensari <hakan.ensari@papercavalier.com>",
    "main": "./lib/bezos",
