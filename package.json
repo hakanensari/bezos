@@ -1,7 +1,7 @@
 {
    "name": "bezos",
-   "description": "Bezos signs requests to various Amazon APIs",
-   "version": "0.0.2",
+   "description": "Signs requests to various Amazon APIs",
+   "version": "0.0.3",
    "homepage": "https://github.com/hakanensari/bezos",
    "author": "Hakan Ensari <hakan.ensari@papercavalier.com>",
    "main": "./lib/bezos",
@@ -14,8 +14,6 @@
    "repository": {
      "type": "git",
      "url": "git://github.com/hakanensari/bezos.git"
-   },
-   "dependencies": {
    },
    "devDependencies": {
      "coffee-script": "*",
