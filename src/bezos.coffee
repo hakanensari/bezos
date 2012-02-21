@@ -1,28 +1,28 @@
-crypto      = require 'crypto'
-querystring = require 'querystring'
+crypto = require 'crypto'
+qs     = require 'querystring'
 
 # Bezos timestamps and signs requests to various Amazon APIs.
 class Bezos
   constructor: (@_secret) ->
 
   # Returns a signed path for given request.
-  sign: (host, pathname, params, method = 'GET') ->
+  sign: (verb, host, pathname, params) ->
     params['Timestamp'] = new Date().toISOString()
 
-    query = (
+    queryString = (
       for key in Object.keys(params).sort()
-        "#{key}=#{querystring.escape params[key]}"
+        "#{key}=#{qs.escape params[key]}"
     ).join('&')
 
     hmac = crypto.createHmac 'sha256', @_secret
     hmac.update [
-      method,
+      verb,
       host,
       pathname,
-      query
+      queryString
     ].join("\n")
     signature = hmac.digest 'base64'
 
-    "#{pathname}?#{query}&Signature=#{querystring.escape signature}"
+    "#{pathname}?#{queryString}&Signature=#{qs.escape signature}"
 
 module.exports = Bezos

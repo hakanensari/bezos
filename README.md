@@ -20,10 +20,10 @@ npm install bezos
 Bezos = require 'bezos'
 
 bezos = new Bezos 'secret'
-params =
-  foo: 1
-  bar: 2
-bezos.sign 'example.com', '/path', params # optionally takes a HTTP method
+bezos.sign 'GET'
+         , 'example.com'
+         , '/path'
+         , { foo: 1 }
 
 [status]: https://secure.travis-ci.org/hakanensari/bezos.png
 [travis]: http://travis-ci.org/hakanensari/bezos
